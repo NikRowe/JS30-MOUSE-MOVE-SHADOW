@@ -1,0 +1,24 @@
+{
+  "name": "js30-16-mouse-move-shadow",
+  "version": "1.0.0",
+  "description": "Wes Bos' JS30 #16 Mouse Move Shadow",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run lite",
+    "lite": "lite-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NikRowe/JS30-MOUSE-MOVE-SHADOW.git"
+  },
+  "author": "Nik Rowe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NikRowe/JS30-MOUSE-MOVE-SHADOW/issues"
+  },
+  "homepage": "https://github.com/NikRowe/JS30-MOUSE-MOVE-SHADOW#readme",
+  "devDependencies": {
+    "lite-server": "^2.5.4"
+  }
+}
