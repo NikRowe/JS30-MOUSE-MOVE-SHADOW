@@ -42,21 +42,6 @@
     const text = document.querySelector('h1')
     const walk = 700 //100px - this sets how far out the shadow will be from the original element //
 
-    function debounce(func, wait = 2000, immediate = true) {
-      var timeout;
-      return function () {
-        var context = this, args = arguments;
-        var later = function () {
-          timeout = null;
-          if (!immediate) func.apply(context, args);
-        };
-        var callNow = immediate && !timeout;
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-        if (callNow) func.apply(context, args);
-      };
-    }
-
 
     // this = hero always because of the eventListener, e.target will change depending on where mouse is. // 
     function random_rgb() {
@@ -89,12 +74,12 @@
 
       // console.log(random)
       text.style.textShadow = `
-      ${xWalk}px ${yWalk}px 0 ${random_rgb()}
+      ${xWalk}px ${yWalk}px 0 ${random_rgb()},
+      ${xWalk * -1}px ${yWalk * -1}px 0 ${random_rgb()},
+      ${yWalk}px ${xWalk * -1}px 0 rgba(119, 15, 171, 0.7),
+      ${yWalk * -1}px ${xWalk}px 0 rgba(171, 15, 70, 0.7)
       `
 
-      // ${xWalk * -1}px ${yWalk * -1}px 0 rgba(15, 171, 124, 0.7),
-      // ${yWalk}px ${xWalk * -1}px 0 rgba(119, 15, 171, 0.7),
-      // ${yWalk * -1}px ${xWalk}px 0 rgba(171, 15, 70, 0.7)
     }
 
     hero.addEventListener('mousemove', shadow)
